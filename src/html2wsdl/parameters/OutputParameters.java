@@ -1,8 +1,7 @@
 package html2wsdl.parameters;
 
 public class OutputParameters
-{
-  private String URI;
+{  
   private String wsdlFile;
   private String wsdlNs;
   private String portType;
@@ -13,17 +12,7 @@ public class OutputParameters
   private String servicePort;
   private Struct request;
   private Struct response;
-  
-  public String getURI()
-  {
-    return this.URI;
-  }
-  
-  public void setURI(String uRI)
-  {
-    this.URI = uRI;
-  }
-  
+   
   public String getWsdlFile()
   {
     return this.wsdlFile;

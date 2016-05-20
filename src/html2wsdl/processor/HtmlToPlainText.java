@@ -1,6 +1,9 @@
 package html2wsdl.processor;
 
 import html2wsdl.parameters.InputParameters;
+import html2wsdl.parameters.OutputParameters;
+import html2wsdl.parameters.wrapper.WrapParameters;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -16,34 +19,36 @@ import org.jsoup.select.NodeVisitor;
 
 public class HtmlToPlainText
 {
-  private static InputParameters expParameters;
-  private static InputParameters compParameters;
-  private static InputParameters implParameters;
   
-  public static void main(String... args)
-    throws IOException
+  public static void main(String... args) throws IOException
   {
-    File input = new File("/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de Mensajer√≠a - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
-    
-    Document doc = Jsoup.parse(input, null);
-    
-    HtmlToPlainText formatter = new HtmlToPlainText();
-    
-    expParameters = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF", 
-      "CORP", "OSB", "v2016.04");
-    for (int i = 12; i < 30; i++)
-    {
-      System.out.println("\nline " + i);
-      String rows = "html > body > table > tbody > tr:nth-child(" + i + ") > td";
-      
-      Elements elements = doc.select(rows);
-      for (int k = 4; k < 7; k++)
-      {
-        Element element = (Element)elements.get(k);
-        String plainText = formatter.getPlainText(element);
-        System.out.println(plainText);
-      }
-    }
+	  InputParameters compParameters;
+	  InputParameters implParameters;
+	    
+	  File input = new File("/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de MensajerÌa - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
+	    
+	  Document doc = Jsoup.parse(input, null);
+	    
+	    HtmlToPlainText formatter = new HtmlToPlainText();
+	    
+	    InputParameters expInParameters = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF", 
+	      "CORP", "OSB", "v2016.04", null);
+	    
+	    OutputParameters outExpParameters = WrapParameters.expWrap(expInParameters);
+	    
+	    for (int i = 12; i < 30; i++)
+	    {
+	      System.out.println("\nline " + i);
+	      String rows = "html > body > table > tbody > tr:nth-child(" + i + ") > td";
+	      
+	      Elements elements = doc.select(rows);
+	      for (int k = 4; k < 7; k++)
+	      {
+	        Element element = (Element)elements.get(k);
+	        String plainText = formatter.getPlainText(element);
+	        System.out.println(plainText);
+	      }
+	    }
   }
   
   public String getPlainText(Element element)

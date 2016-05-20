@@ -7,7 +7,13 @@ public class Struct
   private String xsdFile;
   private String xsdNs;
   
-  public Struct(String payload, String param, String xsdFile, String xsdNs)
+  /**
+ * @param payload
+ * @param param
+ * @param xsdFile
+ * @param xsdNs
+ */
+public Struct(String payload, String param, String xsdFile, String xsdNs)
   {
     this.payload = payload;
     this.param = param;

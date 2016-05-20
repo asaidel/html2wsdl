@@ -12,7 +12,18 @@ public class InputParameters
   private String versionXSD;
   private String backend;
   
-  public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, String negocio, String localizacion, String capa, String versionXSD)
+  /**
+ * @param objeto
+ * @param entidadDiscreta
+ * @param operacion
+ * @param version
+ * @param negocio
+ * @param localizacion
+ * @param capa
+ * @param versionXSD
+ * @param backend
+ */
+public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, String negocio, String localizacion, String capa, String versionXSD, String backend)
   {
     this.objeto = objeto;
     this.entidadDiscreta = entidadDiscreta;
@@ -21,6 +32,7 @@ public class InputParameters
     this.negocio = negocio;
     this.localizacion = localizacion;
     this.versionXSD = versionXSD;
+    this.backend = backend;
   }
   
   public String getEntidadDiscreta()
