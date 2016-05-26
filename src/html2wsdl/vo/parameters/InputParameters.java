@@ -1,4 +1,4 @@
-package html2wsdl.parameters;
+package html2wsdl.vo.parameters;
 
 public class InputParameters
 {
@@ -23,7 +23,8 @@ public class InputParameters
  * @param versionXSD
  * @param backend
  */
-public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, String negocio, String localizacion, String capa, String versionXSD, String backend)
+public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, 
+		String negocio, String localizacion, String capa, String versionXSD, String backend)
   {
     this.objeto = objeto;
     this.entidadDiscreta = entidadDiscreta;
@@ -31,6 +32,7 @@ public InputParameters(String objeto, String entidadDiscreta, String operacion, 
     this.version = version;
     this.negocio = negocio;
     this.localizacion = localizacion;
+    this.capa = capa;
     this.versionXSD = versionXSD;
     this.backend = backend;
   }

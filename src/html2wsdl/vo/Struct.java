@@ -1,4 +1,4 @@
-package html2wsdl.parameters;
+package html2wsdl.vo;
 
 public class Struct
 {
@@ -6,8 +6,9 @@ public class Struct
   private String param;
   private String xsdFile;
   private String xsdNs;
+  private Tag stub;
   
-  /**
+ /**
  * @param payload
  * @param param
  * @param xsdFile
@@ -60,4 +61,12 @@ public Struct(String payload, String param, String xsdFile, String xsdNs)
   {
     this.xsdNs = xsdNs;
   }
+
+public Tag getStub() {
+	return stub;
+}
+
+public void setStub(Tag stub) {
+	this.stub = stub;
+}
 }

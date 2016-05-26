@@ -1,4 +1,6 @@
-package html2wsdl.parameters;
+package html2wsdl.vo.parameters;
+
+import html2wsdl.vo.Struct;
 
 public class OutputParameters
 {  
@@ -10,6 +12,7 @@ public class OutputParameters
   private String soapAction;
   private String serviceName;
   private String servicePort;
+  
   private Struct request;
   private Struct response;
    

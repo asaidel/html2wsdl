@@ -1,8 +1,8 @@
 package html2wsdl.parameters.wrapper;
 
-import html2wsdl.parameters.InputParameters;
-import html2wsdl.parameters.OutputParameters;
-import html2wsdl.parameters.Struct;
+import html2wsdl.vo.Struct;
+import html2wsdl.vo.parameters.InputParameters;
+import html2wsdl.vo.parameters.OutputParameters;
 
 public class WrapParameters
 {
@@ -20,7 +20,7 @@ public class WrapParameters
     
     out.setWsdlNs(getNsPrefix(in, "wsdl") + "-" + in.getVersion());
     
-    String negEntOp = in.getNegocio() + in.getEntidadDiscreta() + in.getOperacion();
+    String negEntOp = in.getObjeto() + in.getEntidadDiscreta() + in.getOperacion();
     
     Struct request = new Struct(negEntOp + "MsgReq", negEntOp + "ReqParam", filePrefix + "Req.xsd", 
     		getNsPrefix(in, "schema") + "/Req-" + in.getVersionXSD());
@@ -32,9 +32,11 @@ public class WrapParameters
     
     out.setBindingOp(negEntOp + "Binding");
     out.setServiceName(negEntOp + "Service");
-    out.setPortType(negEntOp + "Port");
-    
+    out.setPortName(negEntOp + "Pt");
     out.setSoapAction(out.getWsdlNs() + "/Op");
+    out.setPortType(negEntOp + "Op");
+    
+    out.setServicePort(negEntOp + "Port");
     
     return out;
   }
@@ -51,7 +53,7 @@ public class WrapParameters
     
     out.setWsdlNs(getNsPrefix(in, "wsdl") + "-" + in.getVersion() + "/COMP");
     
-    String negEntOp = in.getNegocio() + in.getEntidadDiscreta() + in.getOperacion();
+    String negEntOp = in.getObjeto() + in.getEntidadDiscreta() + in.getOperacion();
     
     Struct request = new Struct(negEntOp + "MsgReq", negEntOp + "ReqParam", filePrefix + "_COMP_Req.xsd", 
     		getNsPrefix(in, "schema") + "/Req/COMP/" + in.getVersionXSD());
@@ -62,9 +64,11 @@ public class WrapParameters
     out.setResponse(response);
     
     out.setBindingOp(negEntOp + "Binding");
-    out.setServiceName(negEntOp + "ServiceCOMP");
-    out.setPortType(negEntOp + "PortCOMP");
+    out.setPortName(negEntOp + "Pt");
+    out.setPortType(negEntOp + "Op");
     
+    out.setServiceName(negEntOp + "ServiceCOMP");
+    out.setServicePort(negEntOp + "PortCOMP");
     out.setSoapAction(out.getWsdlNs() + "/Op");
     
     return out;
@@ -94,7 +98,10 @@ public class WrapParameters
     
     out.setBindingOp(negEntOp + "Binding");
     out.setServiceName(negEntOp + "ServiceIMPL");
-    out.setPortType(negEntOp + "PortIMPL");
+    out.setPortName(negEntOp + "Pt");
+    out.setPortType(negEntOp + "Op");
+    
+    out.setServicePort(negEntOp + "PortIMPL");
     
     out.setSoapAction(out.getWsdlNs() + "/Op");
     
