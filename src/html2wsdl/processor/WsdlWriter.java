@@ -6,22 +6,17 @@ import html2wsdl.vo.parameters.InputParameters;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class WsdlWriter
-{
-/*	private ExcelReader excelReader;
-	public static InputParameters compInParameters;
-	public static InputParameters implInParameters;
-*/
-	
-  public static void main(String[] args) throws IOException 
+{	
+  public static void main(String[] args)
   {
 	  File input = new File("/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de Mensajería - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
 	
 	  InputParameters expInParameters = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF", 
 		      "CORP", "OSB", "v2016.04", null);
 	  
-	  HtmlReader.execHtml(input, expInParameters);
+	  HtmlReader reader = new HtmlReader();
+	  reader.expHtml(input, expInParameters);
   }
 }

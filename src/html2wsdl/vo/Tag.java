@@ -2,17 +2,17 @@ package html2wsdl.vo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Imagine a stub = an @XMLElement. It's a tree-like data structure
  * 
  * @author chenjianjx 
  */
-public class Tag {
+public class Tag implements Cloneable{
 
-	/**
-	 * as "order" in @XmlType(name = "order")
-	 */
+	private String order;
+	
 	private String name;
 
 	/**
@@ -27,23 +27,18 @@ public class Tag {
 	/**
 	 * Child elements, such as {orderId, orderDate}
 	 */
-	private List<Tag> childStubs = new ArrayList<Tag>();
+	private List<Tag> children = new ArrayList<Tag>();	
 
-	/**
-	 * if parent stub's type = Product, is it FunProduct or NotFunProduct?
-	 */
-	private Class<?> subTypeOfParentStub;
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
 
 	public void addChild(Tag e) {
-		childStubs.add(e);
-	}
-
-	public Class<?> getSubTypeOfParentStub() {
-		return subTypeOfParentStub;
-	}
-
-	public void setSubTypeOfParentStub(Class<?> subTypeOfDeclaringStub) {
-		this.subTypeOfParentStub = subTypeOfDeclaringStub;
+		children.add(e);
 	}
 
 	public String getName() {
@@ -78,16 +73,49 @@ public class Tag {
 		this.maxOccurs = maxOccurs;
 	}	
 
-	public List<Tag> getChildStubs() {
-		return childStubs;
+	public List<Tag> getChildren() {
+		return children;
 	}
 
-	public void setChildStubs(List<Tag> childStubs) {
-		this.childStubs = childStubs;
+	public void setChildren(List<Tag> children) {
+		this.children = children;
 	}
 
+	/* TODO test: not used yet */
+	 public Stream<Tag> flattened() {
+	        return Stream.concat(Stream.of(this), children.stream().flatMap(Tag::flattened));
+	}
+	
 	@Override
 	public String toString() {
 		return "Tag [name=" + name + ", type='" + type + "', minOccurs=" + minOccurs + ", maxOccurs=" + maxOccurs + "]";
+	}
+
+	/**
+	 * @param stubBefore
+	 * @param stub
+	 * @param tagList
+	 * @return 
+	 */
+	public Tag findFather(List<Tag> tagList) {
+		for (Tag father : tagList) 
+		  {
+			if (father.getChildren().contains(this))			
+				return father;	
+		  }
+		return null;
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		/*		
+		tag.setType(this.getType());
+		tag.setOrder(this.getOrder());
+		tag.setChildren(this.getChildren());
+		tag.setName(this.getName());
+		tag.setMinOccurs(this.getMinOccurs());
+		tag.setMaxOccurs(this.getMaxOccurs());
+	 */	
+		return super.clone();//tag;
 	}
 }
