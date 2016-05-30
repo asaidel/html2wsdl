@@ -6,30 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
+import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
-import html2wsdl.parameters.wrapper.WrapParameters;
+import org.jsoup.select.NodeTraversor;
+import org.jsoup.select.NodeVisitor;
+
 import html2wsdl.vo.Tag;
-import html2wsdl.vo.parameters.InputParameters;
 import html2wsdl.vo.parameters.OutputParameters;
 
 public class HtmlReader extends Reader {
 
-	@Override
-	public void expHtml(File input, InputParameters expInParameters)
-	{	
-		  OutputParameters expOutParameters = WrapParameters.expWrap(expInParameters);
-		 /* OutputParameters compOutParameters = WrapParameters.compWrap(WsdlWriter.compInParameters);
-		  OutputParameters implOutParameters = WrapParameters.implWrap(WsdlWriter.implInParameters);
-	  */
-		  Document doc;
+	public Tag processExp(File input, OutputParameters expOutParameters)
+	{			  
+		Document doc;
+		
 		try {
 			doc = Jsoup.parse(input, null);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			return;
+			return null;
 		}
 		 
 		  boolean found = false;
@@ -53,15 +53,10 @@ public class HtmlReader extends Reader {
 		      
 		      stub = new Tag();	
 		      
-		      // column loop
-		      // hierarchy
-		      Element element = (Element)elements.get(3);
-		      String plainText = getPlainText(element);
-		      stub.setOrder(plainText);
-
+		      // column loop		    
 		      // name:
-		      element = (Element)elements.get(4);
-		      plainText = getPlainText(element);		      
+		      Element element = (Element)elements.get(4);
+		      String plainText = getPlainText(element);		      
 
 		      // jump unnecessary header lines
 		      if ("ClientService".equals(plainText) && !found)
@@ -90,10 +85,15 @@ public class HtmlReader extends Reader {
 
 		      System.out.println(plainText);
 
+		      // hierarchy
+		      element = (Element)elements.get(3);
+		      plainText = getPlainText(element);
+		      stub.setOrder(plainText);
+		      
 		      // tipo
 		      element = (Element)elements.get(6);
 		      plainText = getPlainText(element);
-
+		      
 		      if (i > initialRow)
 		      {
 		    	  stubBefore = super.handleOrder(tagList, stubBefore, stub, plainText);
@@ -107,7 +107,7 @@ public class HtmlReader extends Reader {
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					return;
+					return null;
 				}		    	  
 		      }
 		      
@@ -131,7 +131,111 @@ public class HtmlReader extends Reader {
 		  } 
 		  
 		  super.displayNodes(root, " ");
+		  		  
+			 /* OutputParameters compOutParameters = WrapParameters.compWrap(WsdlWriter.compInParameters);
+			  OutputParameters implOutParameters = WrapParameters.implWrap(WsdlWriter.implInParameters);
+		  */
 		  
 		  expOutParameters.getRequest().setStub(root);
+		  
+		  // TODO pass to freemarker
+		  
+		  return root;
+	  }
+	
+	public Tag processComp(File input, OutputParameters compOutParameters)
+	{
+		Tag root = processExp(input, compOutParameters);
+		 // TODO pass to freemarker
+		
+		return root;
+	}
+	
+	
+
+	public static String getPlainText(Element element) {
+	    FormattingVisitor formatter = new FormattingVisitor();
+	    NodeTraversor traversor = new NodeTraversor(formatter);
+	    traversor.traverse(element);
+	    return formatter.toString();
 	  }
 }
+
+class FormattingVisitor implements NodeVisitor
+  {
+    private static final int maxWidth = 80;
+    private int width = 0;
+    private StringBuilder accum = new StringBuilder();
+    
+    public void head(Node node, int depth)
+    {
+      String name = node.nodeName();
+      if ((node instanceof TextNode)) {
+        append(((TextNode)node).text());
+      } else if (name.equals("li")) {
+        append("\n * ");
+      } else if (name.equals("dt")) {
+        append("  ");
+      } else if (StringUtil.in(name, new String[] { "p", "h1", "h2", "h3", "h4", "h5", "tr" })) {
+        append("\n");
+      }
+    }
+    
+    public void tail(Node node, int depth)
+    {
+      String name = node.nodeName();
+      if (StringUtil.in(name, new String[] { "br", "dd", "dt", "p", "h1", "h2", "h3", "h4", "h5" })) {
+        append("\n");
+      } else if (name.equals("a")) {
+        append(String.format(" <%s>", new Object[] { node.absUrl("href") }));
+      }
+    }
+    
+    private void append(String text)
+    {
+      if (text.startsWith("\n")) {
+        this.width = 0;
+      }
+      if (text.equals(" ")) {
+        if (this.accum.length() != 0)
+        {
+          if (!StringUtil.in(this.accum.substring(this.accum.length() - 1), new String[] { " ", "\n" })) {}
+        }
+        else {
+          return;
+        }
+      }
+      if (text.length() + this.width > 80)
+      {
+        String[] words = text.split("\\s+");
+        for (int i = 0; i < words.length; i++)
+        {
+          String word = words[i];
+          boolean last = i == words.length - 1;
+          if (!last) {
+            word = word + " ";
+          }
+          if (word.length() + this.width > 80)
+          {
+            this.accum.append("\n").append(word);
+            this.width = word.length();
+          }
+          else
+          {
+            this.accum.append(word);
+            this.width += word.length();
+          }
+        }
+      }
+      else
+      {
+        this.accum.append(text);
+        this.width += text.length();
+      }
+    }
+    
+    public String toString()
+    {
+      return this.accum.toString();
+    }
+  }
