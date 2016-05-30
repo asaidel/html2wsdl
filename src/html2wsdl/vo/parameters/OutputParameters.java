@@ -6,8 +6,8 @@ public class OutputParameters
 {  
   private String wsdlFile;
   private String wsdlNs;
-  private String portType;
   private String portName;
+  private String portOp;
   private String bindingOp;
   private String soapAction;
   private String serviceName;
@@ -15,7 +15,7 @@ public class OutputParameters
   
   private Struct request;
   private Struct response;
-   
+  
   public String getWsdlFile()
   {
     return this.wsdlFile;
@@ -36,14 +36,14 @@ public class OutputParameters
     this.wsdlNs = wsdlNs;
   }
   
-  public String getPortType()
+  public String getPortOp()
   {
-    return this.portType;
+    return this.portOp;
   }
   
-  public void setPortType(String portType)
+  public void setPortOp(String portOp)
   {
-    this.portType = portType;
+    this.portOp = portOp;
   }
   
   public String getPortName()

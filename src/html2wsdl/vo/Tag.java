@@ -98,7 +98,7 @@ public class Tag implements Cloneable{
 	 * @return 
 	 */
 	public Tag findFather(List<Tag> tagList) {
-		for (Tag father : tagList) 
+		for (Tag father : tagList)
 		  {
 			if (father.getChildren().contains(this))			
 				return father;	

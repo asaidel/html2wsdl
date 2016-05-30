@@ -2,34 +2,34 @@ package html2wsdl.vo;
 
 public class Struct
 {
-  private String payload;
+  private String msgName;
   private String param;
   private String xsdFile;
   private String xsdNs;
   private Tag stub;
   
  /**
- * @param payload
+ * @param msgName
  * @param param
  * @param xsdFile
  * @param xsdNs
  */
-public Struct(String payload, String param, String xsdFile, String xsdNs)
+public Struct(String msgName, String param, String xsdFile, String xsdNs)
   {
-    this.payload = payload;
+    this.msgName = msgName;
     this.param = param;
     this.xsdFile = xsdFile;
     this.xsdNs = xsdNs;
   }
   
-  public String getPayload()
+  public String getMsgName()
   {
-    return this.payload;
+    return this.msgName;
   }
   
-  public void setPayload(String payload)
+  public void setMsgName(String msgName)
   {
-    this.payload = payload;
+    this.msgName = msgName;
   }
   
   public String getParam()
