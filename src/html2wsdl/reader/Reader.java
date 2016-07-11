@@ -20,13 +20,7 @@ public abstract class Reader {
 		super();
 	}
 
-	/**
-	 * @param tagList
-	 * @param stubBefore
-	 * @param stub
-	 * @param type
-	 * @return
-	 */
+
 	protected Tag handleOrder(List<Tag> tagList, Tag stubBefore, Tag stub, String type) {
 		if (stub.getOrder().length() > stubBefore.getOrder().length())
 		  {

@@ -91,12 +91,7 @@ public class Tag implements Cloneable{
 		return "Tag [name=" + name + ", type='" + type + "', minOccurs=" + minOccurs + ", maxOccurs=" + maxOccurs + "]";
 	}
 
-	/**
-	 * @param stubBefore
-	 * @param stub
-	 * @param tagList
-	 * @return 
-	 */
+
 	public Tag findFather(List<Tag> tagList) {
 		for (Tag father : tagList)
 		  {

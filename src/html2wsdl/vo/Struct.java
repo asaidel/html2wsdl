@@ -8,12 +8,7 @@ public class Struct
   private String xsdNs;
   private Tag stub;
   
- /**
- * @param msgName
- * @param param
- * @param xsdFile
- * @param xsdNs
- */
+
 public Struct(String msgName, String param, String xsdFile, String xsdNs)
   {
     this.msgName = msgName;
