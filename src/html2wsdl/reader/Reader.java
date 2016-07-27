@@ -28,21 +28,22 @@ public abstract class Reader {
 	 * @return
 	 */
 	protected Tag handleOrder(List<Tag> tagList, Tag stubBefore, Tag stub, String type) {
-		if (stub.getOrder().length() > stubBefore.getOrder().length())
+		
+		  if (stub.getOrder().length() > stubBefore.getOrder().length())
 		  {
-			  stubBefore.addChild(stub);		     		 
+			  stubBefore.addChild(stub);
 		  }
 		  else if (stub.getOrder().length() == stubBefore.getOrder().length()) 
 		  {
 			  // root.flattened().filter(tag -> tag.getChildren().contains(stubParent)).findFirst();
-			  Tag father = stubBefore.findFather(tagList);		    		  
-			  father.addChild(stub);    		 	    		  
-		  }
-		  else // stub.getOrder().length() == stubBefore.getOrder().length()
-		  {		
-			  // TODO maybe sibling search is more precise comparing order
-			  Tag grandPa = stubBefore.findFather(tagList).findFather(tagList);		    		 
+			  Tag grandPa = stubBefore.findFather(tagList);		    		  
 			  grandPa.addChild(stub);
+		  }
+		  else // stub.getOrder().length() < stubBefore.getOrder().length()
+		  {		
+			  // TODO maybe sibling search is more precise comparing order and/or reuse grandPa above
+			  Tag grandGrandPa = stubBefore.findFather(tagList).findFather(tagList);		    		 
+			  grandGrandPa.addChild(stub);
 		  }
 		  
 		stub.setType(type);

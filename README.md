@@ -24,10 +24,12 @@ Consider 2 layers: EXP, COMP. Each one with its own parameters. Check WsdlWriter
 You can also modify the WrapParameters class, freemarker templates for parameters wrapping. 
 
 ##STATUS
+* Beta state yet
 * EXP, COMP layer ready (Java part)
+* EXP WSDL ready
 
 ##TODO:
 * add example
 * translate parameters to english
-* input could be excel for parameters and/or spec in addition to HTML.
-* EXP, COMP freemarker templates (WSDL, XSD)
+* in addition to HTML input, it could be excel for parameters and/or spec.
+* EXP, COMP freemarker templates (WSDL, XSD). 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://mdwcorp.falabella.com/FIF/CORP/OSB/schema/Tarjeta/Configuracion/Cambiar/Resp-v2016.04"
+	targetNamespace="http://mdwcorp.falabella.com/FIF/CORP/OSB/schema/Tarjeta/Configuracion/Cambiar/Resp-v2016.04"
+	elementFormDefault="unqualified">
+
+    <xs:element name="TarjetaConfiguracionCambiarMsgResp" type="tns:tarjetaConfiguracionCambiarMsgResp_TYPE">
+    </xs:element>
+    
+    <xs:complexType name="tarjetaConfiguracionCambiarMsgResp_TYPE">
+    	<xs:sequence>
+    		<xs:element name="respuesta" type="tns:respuesta_TYPE" minOccurs="0"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>  
+    
+    <xs:complexType name="respuesta_TYPE">
+        <xs:sequence>
+            <xs:element name="codigoRespuesta" type="xs:int" maxOccurs="1" minOccurs="1"></xs:element>
+            <xs:element name="glosaRespuesta" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

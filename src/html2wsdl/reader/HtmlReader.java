@@ -85,7 +85,7 @@ public class HtmlReader extends Reader {
 
 		      System.out.println(plainText);
 
-		      // hierarchy
+		      // order
 		      element = (Element)elements.get(3);
 		      plainText = getPlainText(element);
 		      stub.setOrder(plainText);

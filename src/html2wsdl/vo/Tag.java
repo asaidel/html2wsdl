@@ -2,7 +2,7 @@ package html2wsdl.vo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
+// import java.util.stream.Stream;
 
 /**
  * Imagine a stub = an @XMLElement. It's a tree-like data structure
@@ -82,21 +82,16 @@ public class Tag implements Cloneable{
 	}
 
 	/* TODO test: not used yet */
-	 public Stream<Tag> flattened() {
+	/* public Stream<Tag> flattened() {
 	        return Stream.concat(Stream.of(this), children.stream().flatMap(Tag::flattened));
-	}
+	}*/
 	
 	@Override
 	public String toString() {
 		return "Tag [name=" + name + ", type='" + type + "', minOccurs=" + minOccurs + ", maxOccurs=" + maxOccurs + "]";
 	}
 
-	/**
-	 * @param stubBefore
-	 * @param stub
-	 * @param tagList
-	 * @return 
-	 */
+
 	public Tag findFather(List<Tag> tagList) {
 		for (Tag father : tagList)
 		  {
