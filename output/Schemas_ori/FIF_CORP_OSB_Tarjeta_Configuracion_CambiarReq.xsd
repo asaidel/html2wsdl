@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://mdwcorp.falabella.com/FIF/CORP/OSB/schema/Tarjeta/Configuracion/Cambiar/Req-v2016.04"
+	targetNamespace="http://mdwcorp.falabella.com/FIF/CORP/OSB/schema/Tarjeta/Configuracion/Cambiar/Req-v2016.04"
+	elementFormDefault="unqualified">
+	
+    <xs:complexType name="cliente_TYPE">
+    	<xs:sequence>
+    		<xs:element name="numeroDocumento" type="xs:string" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    		<xs:element name="tipoDocumento" type="tns:tipoDocumento_TYPE" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>    </xs:complexType>
+
+    <xs:complexType name="tarjeta_TYPE">
+    	<xs:sequence>
+    		<xs:element name="bin" type="xs:long"></xs:element>
+    		<xs:element name="sufijoPan" type="xs:string"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="reglas_TYPE">
+    	<xs:sequence>
+    		<xs:element name="nombreEtiqueta" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="value" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    	</xs:sequence>    </xs:complexType>
+
+    <xs:complexType name="TarjetaConfiguracionCambiarMsgReq_TYPE">
+    	<xs:sequence>
+    		<xs:element name="cliente" type="tns:cliente_TYPE"></xs:element>
+            <xs:element name="tarjeta" type="tns:tarjeta_TYPE"></xs:element>
+            <xs:element name="reglas" type="tns:reglas_TYPE" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="TarjetaConfiguracionCambiarMsgReq"
+    	type="tns:TarjetaConfiguracionCambiarMsgReq_TYPE" >
+    </xs:element>
+
+    <xs:simpleType name="tipoDocumento_TYPE">
+		<xs:restriction base="xs:string">
+       		<xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="E"/>
+            <xs:enumeration value="P"/>
+            <xs:enumeration value="W"/>
+            <xs:enumeration value="X"/>
+		</xs:restriction> 
+	</xs:simpleType>
+	
+</xs:schema>

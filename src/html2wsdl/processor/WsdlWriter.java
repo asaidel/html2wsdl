@@ -18,7 +18,7 @@ public class WsdlWriter
 {	
   public static void main(String[] args)
   {
-	  File inputHtml = new File("C:\\tmp\\ATC02 - Definicion y Mapeo de Mensajeria - tarjetaConfiguracionCambiar - CMRCL_archivos\\sheet003.htm");
+	  File inputHtml = new File("/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de Mensajería - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
 	
 	  InputParameters expInParameters = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF", 
 		      "CORP", "OSB", "v2016.04", null);
@@ -42,7 +42,6 @@ public class WsdlWriter
         cfg.setDefaultEncoding("UTF-8");
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         cfg.setLogTemplateExceptions(false);
-
     
 	    // 2.2. Get the template
 	    Writer fileWriter = null;	    
@@ -56,10 +55,9 @@ public class WsdlWriter
 	    //template.process(expOutParameters, consoleWriter);
 
 	    // For the sake of example, also write output into a file:
-	    fileWriter= new FileWriter(new File("c:\\tmp\\output.html"));
+	    fileWriter= new FileWriter(new File("output/"+expOutParameters.getWsdlFile()));
 	    
 	    //List<Item> list;
-
 
 	      template.process(expOutParameters, fileWriter);
 	    } catch(Exception e)
@@ -78,9 +76,6 @@ public class WsdlWriter
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    }
-	  
-	  
-	  
+	  }
   }
 }

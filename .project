@@ -3,7 +3,6 @@
 	<name>html2wsdl</name>
 	<comment></comment>
 	<projects>
-		<project>wsdl2html</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

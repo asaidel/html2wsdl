@@ -7,10 +7,9 @@
 	<version>2.0.1</version>
 	<name>convert html to wsdl</name>
 
-
 	<properties>
 		<junit.version>4.9</junit.version>
-		<jdk.version>1.8</jdk.version>
+		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
@@ -57,8 +56,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -67,17 +64,15 @@
 					<target>${jdk.version}</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>html2wsdl.processor.WsdlWriter</mainClass>
+				</configuration>
 			</plugin>
-			
-                        <plugin>
-                                <groupId>org.codehaus.mojo</groupId>
-                                <artifactId>exec-maven-plugin</artifactId>
-                                <version>1.2.1</version>
-                                <configuration>
-                                        <mainClass>html2wsdl.processor.WsdlWriter</mainClass>
-                                </configuration>
-                        </plugin>			
-			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -97,7 +92,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 
@@ -122,8 +116,3 @@
 
 
 </project>
-
-
-
-
-		
