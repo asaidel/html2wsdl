@@ -26,10 +26,10 @@ You can also modify the WrapParameters class, freemarker templates for parameter
 ##STATUS
 * Beta state yet
 * EXP, COMP layer ready (Java part)
-* EXP WSDL ready
+* EXP WSDL, XSD ready
 
 ##TODO:
 * add example
 * translate parameters to english
 * in addition to HTML input, it could be excel for parameters and/or spec.
-* EXP, COMP freemarker templates (WSDL, XSD). 
+* COMP freemarker templates (WSDL, XSD). 

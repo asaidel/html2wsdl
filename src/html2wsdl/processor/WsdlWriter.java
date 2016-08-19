@@ -5,77 +5,52 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-import freemarker.template.Configuration;
 import freemarker.template.Template;
-import freemarker.template.TemplateExceptionHandler;
+import freemarker.template.TemplateException;
 import html2wsdl.parameters.wrapper.WrapParameters;
 // import html2wsdl.reader.ExcelReader;
 import html2wsdl.reader.HtmlReader;
 import html2wsdl.vo.parameters.InputParameters;
+import html2wsdl.vo.parameters.OffsetParameters;
 import html2wsdl.vo.parameters.OutputParameters;
 
-public class WsdlWriter
+public class WsdlWriter extends html2wsdl.processor.Writer
 {	
   public static void main(String[] args)
   {
-	  File inputHtml = new File("/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de Mensajería - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
+	File inputHtml = new File(
+			"/asaidel/txt/falabella/Paytrue/tarjetaConfiguracionCambiar/ATC02 - Definicion y Mapeo de Mensajería - tarjetaConfiguracionCambiar - CMRCL_archivos/sheet003.htm");
+
+	InputParameters parametersIn = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF",
+			"CORP", "OSB", "v2016.04", null);
+
+	OutputParameters expOutParameters = WrapParameters.expWrap(parametersIn);
+	OffsetParameters offsetParameters = new OffsetParameters(12, 7, 18, 34, 4);
 	
-	  InputParameters expInParameters = new InputParameters("Tarjeta", "Configuracion", "Cambiar", "v1.0", "FIF", 
-		      "CORP", "OSB", "v2016.04", null);
-	  
-	  HtmlReader reader = new HtmlReader();
-	  OutputParameters expOutParameters = WrapParameters.expWrap(expInParameters);
-	  reader.processExp(inputHtml, expOutParameters);
-	  	  
-	  // 1. Configure FreeMarker
-	    //
-	    // You should do this ONLY ONCE, when your application starts,
-	    // then reuse the same Configuration object elsewhere.
-	    
-	    Configuration cfg = new Configuration(Configuration.VERSION_2_3_25);
-        try {
-			cfg.setDirectoryForTemplateLoading(new File("resources"));
-		} catch (IOException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-        cfg.setDefaultEncoding("UTF-8");
-        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
-        cfg.setLogTemplateExceptions(false);
-    
-	    // 2.2. Get the template
-	    Writer fileWriter = null;	    
-	    try {
-	    Template template = cfg.getTemplate("wsdl.ftl");
-	      
-	    // 2.3. Generate the output
+	HtmlReader reader = new HtmlReader();
+	reader.process(expOutParameters, offsetParameters, inputHtml);
 
-	    // Write output to the console
-	   // Writer consoleWriter = new OutputStreamWriter(System.out);
-	    //template.process(expOutParameters, consoleWriter);
+	// 1. Configure FreeMarker
+	//
+	// You should do this ONLY ONCE, when your application starts,
+	// then reuse the same Configuration object elsewhere.
 
-	    // For the sake of example, also write output into a file:
-	    fileWriter= new FileWriter(new File("output/"+expOutParameters.getWsdlFile()));
-	    
-	    //List<Item> list;
+	try {
+		writeXml(expOutParameters, "wsdl.ftl", expOutParameters.getWsdlFile());
+	
+		writeXml(expOutParameters, "request.ftl", "Schemas/"+expOutParameters.getRequest().getXsdFile());
+		
+		writeXml(expOutParameters, "response.ftl", "Schemas/"+expOutParameters.getResponse().getXsdFile());	
+	} catch (IOException | TemplateException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+ }
 
-	      template.process(expOutParameters, fileWriter);
-	    } catch(Exception e)
-	    {
-		      try {
-				fileWriter.close();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-	    }
-	    finally {
-	      try {
-			fileWriter.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	  }
+	private static void writeXml(OutputParameters expOutParameters, String ftl, String file) throws IOException, TemplateException 
+	{
+		Writer fileWriter = new FileWriter(new File("output/" + file));		
+		Template template = configure(ftl);
+		template.process(expOutParameters, fileWriter);		
+	}
   }
-}

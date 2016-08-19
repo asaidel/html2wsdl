@@ -16,11 +16,12 @@ import org.jsoup.select.NodeTraversor;
 import org.jsoup.select.NodeVisitor;
 
 import html2wsdl.vo.Tag;
+import html2wsdl.vo.parameters.OffsetParameters;
 import html2wsdl.vo.parameters.OutputParameters;
 
 public class HtmlReader extends Reader {
 
-	public Tag processExp(File input, OutputParameters expOutParameters)
+	public Tag process(OutputParameters expOutParameters, OffsetParameters offsetParameters, File input)
 	{			  
 		Document doc;
 		
@@ -32,20 +33,31 @@ public class HtmlReader extends Reader {
 			return null;
 		}
 		 
-		  boolean found = false;
-		  
-		  // TODO candidates to be params
 		  // rows loop
-		  int j = 20;
+		  Tag root = readHTML(offsetParameters.getRowSize(), offsetParameters.getInitialRow(), 
+				  offsetParameters.getHeaderSize(), false, doc);
 		  
-		  int initialRow = 12;
+		  expOutParameters.getRequest().setStub(root);
 		  
-		  List<Tag> tagList = new ArrayList<Tag>();
+		  System.out.println("\nResponse");
+		 
+		  root = readHTML(offsetParameters.getRowSizeResponse(), offsetParameters.getInitialRowResponse(), 
+				  offsetParameters.getHeaderSize(), true, doc);
+		  
+		  expOutParameters.getResponse().setStub(root);
+		  
+		  return root;
+	  }
+
+	private Tag readHTML(int rowSize, int initialRow, int headerSize, boolean found, Document doc) {
+		List<Tag> tagList = new ArrayList<Tag>();
 		  
 		  Tag root = new Tag(), stubBefore = null, stub;
 		  
-		  for (int i = initialRow; i < j; i++)
-		  {			  
+		  int limit = initialRow + rowSize;
+		  
+		  for (int i = initialRow; i < limit; i++)
+		  {
 		      System.out.println("\nline " + i);
 		      String rows = "html > body > table > tbody > tr:nth-child(" + i + ") > td";
 		      
@@ -61,13 +73,12 @@ public class HtmlReader extends Reader {
 		      // jump unnecessary header lines
 		      if ("ClientService".equals(plainText) && !found)
 		      {
-		    	  i += 7;
-		    	  initialRow = i+1;
-		    	  j = 30;
+		    	  i += headerSize;
+		    	  initialRow = i+1;		    	 
 		    	  found = true;
 		    	  System.out.println("header found!");
 		    	  continue;
-		      }	              	
+		      }
 
 		      stub.setName(plainText);
 		      System.out.println(plainText);
@@ -135,24 +146,9 @@ public class HtmlReader extends Reader {
 			 /* OutputParameters compOutParameters = WrapParameters.compWrap(WsdlWriter.compInParameters);
 			  OutputParameters implOutParameters = WrapParameters.implWrap(WsdlWriter.implInParameters);
 		  */
-		  
-		  expOutParameters.getRequest().setStub(root);
-		  
-		  // TODO pass to freemarker
-		  
-		  return root;
-	  }
-	
-	public Tag processComp(File input, OutputParameters compOutParameters)
-	{
-		Tag root = processExp(input, compOutParameters);
-		 // TODO pass to freemarker
-		
 		return root;
 	}
 	
-	
-
 	public static String getPlainText(Element element) {
 	    FormattingVisitor formatter = new FormattingVisitor();
 	    NodeTraversor traversor = new NodeTraversor(formatter);

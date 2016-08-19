@@ -16,10 +16,6 @@ public abstract class Reader {
 		}		
 	}
 
-	public Reader() {
-		super();
-	}
-
 	/**
 	 * @param tagList
 	 * @param stubBefore
