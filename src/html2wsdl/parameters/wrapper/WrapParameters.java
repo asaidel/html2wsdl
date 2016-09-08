@@ -41,7 +41,6 @@ public class WrapParameters
     return out;
   }
 
-
   public static OutputParameters compWrap(InputParameters in)
   {
     OutputParameters out = new OutputParameters();
@@ -49,7 +48,7 @@ public class WrapParameters
     String filePrefix = in.getNegocio() + "_" + in.getLocalizacion() + "_" + in.getCapa() + "_" + 
       in.getObjeto() + "_" + in.getEntidadDiscreta() + "_" + in.getOperacion();
     
-    out.setWsdlFile(getNsPrefix(in, "wsdl") + "_COMP.wsdl");
+    out.setWsdlFile(filePrefix + "_COMP.wsdl");
     
     out.setWsdlNs(getNsPrefix(in, "wsdl") + "-" + in.getVersion() + "/COMP");
     
@@ -72,8 +71,7 @@ public class WrapParameters
     out.setSoapAction(out.getWsdlNs() + "/Op");
     
     return out;
-  }
-  
+  }  
   
   public static OutputParameters implWrap(InputParameters in)
   {

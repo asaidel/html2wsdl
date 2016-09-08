@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.asaidel</groupId>
 	<artifactId>html2wsdl</artifactId>
-	<version>2.0.1</version>
+	<version>1.5</version>
 	<name>convert html to wsdl</name>
 
 	<properties>
-		<junit.version>4.9</junit.version>
+		<junit.version>4.12</junit.version>
 		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
  		<eclipselink.groupid>org.eclipse.persistence</eclipselink.groupid>
@@ -95,8 +95,6 @@
 		  <groupId>org.jsoup</groupId>
 		  <artifactId>jsoup</artifactId>
 		  <version>1.9.2</version>
-		</dependency>  
+		</dependency>
 	</dependencies>
-
-
 </project>

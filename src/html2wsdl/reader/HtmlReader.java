@@ -21,36 +21,42 @@ import html2wsdl.vo.parameters.OutputParameters;
 
 public class HtmlReader extends Reader {
 
-	public Tag process(OutputParameters expOutParameters, OffsetParameters offsetParameters, File input)
+	/**
+	 * @param offsetParameters
+	 * @param outParameters
+	 * @param input
+	 * @return
+	 * @throws IOException 
+	 */
+	public void process(OffsetParameters offsetParameters, OutputParameters outParameters, File input) throws IOException
 	{			  
-		Document doc;
-		
-		try {
-			doc = Jsoup.parse(input, null);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			return null;
-		}
-		 
-		  // rows loop
-		  Tag root = readHTML(offsetParameters.getRowSize(), offsetParameters.getInitialRow(), 
-				  offsetParameters.getHeaderSize(), false, doc);
-		  
-		  expOutParameters.getRequest().setStub(root);
-		  
-		  System.out.println("\nResponse");
-		 
-		  root = readHTML(offsetParameters.getRowSizeResponse(), offsetParameters.getInitialRowResponse(), 
-				  offsetParameters.getHeaderSize(), true, doc);
-		  
-		  expOutParameters.getResponse().setStub(root);
-		  
-		  return root;
+		Document doc = Jsoup.parse(input, null);
+
+		// rows loop
+		Tag request = readHTML(offsetParameters.getRowSize(), offsetParameters.getInitialRow(),
+				offsetParameters.getHeaderSize(), offsetParameters.getInitialCol(), false, doc);
+
+		outParameters.getRequest().setStub(request);
+
+		System.out.println("\nResponse");
+
+		Tag response = readHTML(offsetParameters.getRowSizeResponse(), offsetParameters.getInitialRowResponse(),
+				offsetParameters.getHeaderSize(), offsetParameters.getInitialCol(), true, doc);
+
+		outParameters.getResponse().setStub(response);		  
 	  }
 
-	private Tag readHTML(int rowSize, int initialRow, int headerSize, boolean found, Document doc) {
-		List<Tag> tagList = new ArrayList<Tag>();
+	/**
+	 * @param rowSize
+	 * @param initialRow
+	 * @param headerSize
+	 * @param initialCol
+	 * @param found
+	 * @param doc
+	 * @return
+	 */
+	private Tag readHTML(int rowSize, int initialRow, int headerSize, int initialCol, boolean found, Document doc) {
+		  List<Tag> tagList = new ArrayList<Tag>();
 		  
 		  Tag root = new Tag(), stubBefore = null, stub;
 		  
@@ -59,22 +65,23 @@ public class HtmlReader extends Reader {
 		  for (int i = initialRow; i < limit; i++)
 		  {
 		      System.out.println("\nline " + i);
+
 		      String rows = "html > body > table > tbody > tr:nth-child(" + i + ") > td";
-		      
+		    
 		      Elements elements = doc.select(rows);
 		      
 		      stub = new Tag();	
 		      
-		      // column loop		    
+		      // column loop  
 		      // name:
-		      Element element = (Element)elements.get(4);
+		      Element element = (Element)elements.get(initialCol+1);
 		      String plainText = getPlainText(element);		      
 
 		      // jump unnecessary header lines
 		      if ("ClientService".equals(plainText) && !found)
 		      {
 		    	  i += headerSize;
-		    	  initialRow = i+1;		    	 
+		    	  initialRow = i+1;   	 
 		    	  found = true;
 		    	  System.out.println("header found!");
 		    	  continue;
@@ -84,7 +91,7 @@ public class HtmlReader extends Reader {
 		      System.out.println(plainText);
 
 		      // minOccurs
-		      element = (Element)elements.get(5);
+		      element = (Element)elements.get(initialCol+2);
 		      plainText = getPlainText(element);
 		      stub.setMinOccurs(Integer.valueOf(plainText.substring(0,1)));
 
@@ -97,12 +104,12 @@ public class HtmlReader extends Reader {
 		      System.out.println(plainText);
 
 		      // order
-		      element = (Element)elements.get(3);
+		      element = (Element)elements.get(initialCol);
 		      plainText = getPlainText(element);
 		      stub.setOrder(plainText);
 		      
 		      // tipo
-		      element = (Element)elements.get(6);
+		      element = (Element)elements.get(initialCol+3);
 		      plainText = getPlainText(element);
 		      
 		      if (i > initialRow)
@@ -115,8 +122,7 @@ public class HtmlReader extends Reader {
 		    	 // BeanUtils.copyProperties(root, stubBefore);
 		    	  try {
 					root = (Tag) stubBefore.clone();
-				} catch (CloneNotSupportedException e) {
-					// TODO Auto-generated catch block
+				} catch (CloneNotSupportedException e) {					
 					e.printStackTrace();
 					return null;
 				}		    	  
@@ -142,18 +148,15 @@ public class HtmlReader extends Reader {
 		  } 
 		  
 		  super.displayNodes(root, " ");
-		  		  
-			 /* OutputParameters compOutParameters = WrapParameters.compWrap(WsdlWriter.compInParameters);
-			  OutputParameters implOutParameters = WrapParameters.implWrap(WsdlWriter.implInParameters);
-		  */
-		return root;
+		  	
+		  return root;
 	}
 	
 	public static String getPlainText(Element element) {
 	    FormattingVisitor formatter = new FormattingVisitor();
 	    NodeTraversor traversor = new NodeTraversor(formatter);
 	    traversor.traverse(element);
-	    return formatter.toString();
+	    return formatter.toString().replaceAll("[^a-zA-Z0-9.]", "");
 	  }
 }
 
