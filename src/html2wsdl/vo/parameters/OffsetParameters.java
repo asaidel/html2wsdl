@@ -3,19 +3,31 @@ package html2wsdl.vo.parameters;
 public class OffsetParameters {
 	
 	private int initialRow, 
-				headerSize, 
-				rowSize,
-				initialRowResponse,
-				rowSizeResponse;
+	headerSize, 
+	rowSize,
+	initialRowResponse,
+	rowSizeResponse,
+	initialCol;
 	
-	public OffsetParameters(int initialRow, int headerSize, int rowSize, int initialRowResponse, int rowSizeResponse) {
+	/**
+	 * @param initialRow
+	 * @param headerSize
+	 * @param rowSize
+	 * @param initialRowResponse
+	 * @param rowSizeResponse
+	 * @param initialCol
+	 */
+	public OffsetParameters(int initialRow, int headerSize, int rowSize, int initialRowResponse, int rowSizeResponse,
+			int initialCol) {
 		super();
 		this.initialRow = initialRow;
 		this.headerSize = headerSize;
 		this.rowSize = rowSize;
 		this.initialRowResponse = initialRowResponse;
 		this.rowSizeResponse = rowSizeResponse;
+		this.initialCol = initialCol;
 	}
+
 	
 	public int getInitialRow() {
 		return initialRow;
@@ -55,5 +67,13 @@ public class OffsetParameters {
 
 	public void setRowSizeResponse(int rowSizeResponse) {
 		this.rowSizeResponse = rowSizeResponse;
+	}
+
+	public int getInitialCol() {
+		return initialCol;
+	}
+
+	public void setInitialCol(int initialCol) {
+		this.initialCol = initialCol;
 	}
 }

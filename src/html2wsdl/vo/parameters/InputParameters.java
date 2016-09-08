@@ -14,7 +14,7 @@ public class InputParameters
   
   /**
  * @param objeto
- * @param entidadDiscreta
+ * @param entidadDiscreta / interface in IMPL
  * @param operacion
  * @param version
  * @param negocio
