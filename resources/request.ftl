@@ -5,7 +5,7 @@
 	elementFormDefault="unqualified">
 	
 	<xs:element name="${request.msgName}"
-    	type="tns:${request.msgName}_TYPE" />    
+    	type="tns:${request.msgName?uncap_first}_TYPE" />    
 
 <#macro complexTypes stub>
 <#if stub.children?size!=0> 
@@ -21,10 +21,10 @@
 		</xs:sequence>
     </xs:complexType>
     <#list stub.children as child>
+    
     	<@complexTypes stub=child />
     </#list> 
 </#if>
 </#macro>
-
 	<@complexTypes stub=request.stub />
 </xs:schema>

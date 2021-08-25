@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
-import org.jsoup.helper.StringUtil;
+import org.jsoup.internal.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
@@ -147,6 +147,8 @@ public class HtmlReader extends Reader {
 		      System.out.println(stub.toString());
 		  } 
 		  
+		  System.out.println();
+		  
 		  super.displayNodes(root, " ");
 		  	
 		  return root;
@@ -154,8 +156,8 @@ public class HtmlReader extends Reader {
 	
 	public static String getPlainText(Element element) {
 	    FormattingVisitor formatter = new FormattingVisitor();
-	    NodeTraversor traversor = new NodeTraversor(formatter);
-	    traversor.traverse(element);
+	    NodeTraversor traversor = new NodeTraversor();
+	    traversor.traverse(formatter, element);
 	    return formatter.toString().replaceAll("[^a-zA-Z0-9.]", "");
 	  }
 }

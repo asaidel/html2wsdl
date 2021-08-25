@@ -94,10 +94,11 @@ public class Tag implements Cloneable{
 
 	public Tag findFather(List<Tag> tagList) {
 		for (Tag father : tagList)
-		  {
+	    {
 			if (father.getChildren().contains(this))			
 				return father;	
-		  }
+	    }
+		
 		return null;
 	}
 	

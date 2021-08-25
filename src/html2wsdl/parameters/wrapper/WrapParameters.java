@@ -34,8 +34,7 @@ public class WrapParameters
     out.setServiceName(negEntOp + "Service");
     out.setPortName(negEntOp + "Pt");
     out.setSoapAction(out.getWsdlNs() + "/Op");
-    out.setPortOp(negEntOp + "Op");
-    
+    out.setPortOp(negEntOp + "Op");    
     out.setServicePort(negEntOp + "Port");
     
     return out;
@@ -63,12 +62,11 @@ public class WrapParameters
     out.setResponse(response);
     
     out.setBindingOp(negEntOp + "Binding");
-    out.setPortName(negEntOp + "Pt");
-    out.setPortOp(negEntOp + "Op");
-    
     out.setServiceName(negEntOp + "ServiceCOMP");
-    out.setServicePort(negEntOp + "PortCOMP");
+    out.setPortName(negEntOp + "Pt");
     out.setSoapAction(out.getWsdlNs() + "/Op");
+    out.setPortOp(negEntOp + "Op");    
+    out.setServicePort(negEntOp + "PortCOMP");
     
     return out;
   }  
@@ -97,11 +95,9 @@ public class WrapParameters
     out.setBindingOp(negEntOp + "Binding");
     out.setServiceName(negEntOp + "ServiceIMPL");
     out.setPortName(negEntOp + "Pt");
-    out.setPortOp(negEntOp + "Op");
-    
-    out.setServicePort(negEntOp + "PortIMPL");
-    
     out.setSoapAction(out.getWsdlNs() + "/Op");
+    out.setPortOp(negEntOp + "Op");    
+    out.setServicePort(negEntOp + "PortIMPL");   
     
     return out;
   }

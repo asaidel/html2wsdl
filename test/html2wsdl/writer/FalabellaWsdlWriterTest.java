@@ -16,7 +16,7 @@ import html2wsdl.vo.parameters.InputParameters;
 import html2wsdl.vo.parameters.OffsetParameters;
 import html2wsdl.vo.parameters.OutputParameters;
 
-public class FalabellaWsdlWriterTest extends FreemarkerWriter 
+public class FalabellaWsdlWriterTest extends FreemarkerWriterTest 
 {	
 	@Before
     public void setUp() throws IOException {
@@ -85,7 +85,7 @@ public class FalabellaWsdlWriterTest extends FreemarkerWriter
 	private void writeXml(OutputParameters outParameters, String ftl, String file) throws IOException, TemplateException 
 	{
 		Writer fileWriter = new FileWriter(new File("output/" + file));	
-		Template template = super.CFG.getTemplate(ftl);
+		Template template = super.getCfg().getTemplate(ftl);
 		template.process(outParameters, fileWriter);		
 	}
 }

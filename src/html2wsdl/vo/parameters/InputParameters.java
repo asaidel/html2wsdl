@@ -26,16 +26,34 @@ public class InputParameters
 public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, 
 		String negocio, String localizacion, String capa, String versionXSD, String backend)
   {
-    this.objeto = objeto;
-    this.entidadDiscreta = entidadDiscreta;
-    this.operacion = operacion;
-    this.version = version;
-    this.negocio = negocio;
-    this.localizacion = localizacion;
-    this.capa = capa;
-    this.versionXSD = versionXSD;
+    this(objeto, entidadDiscreta, operacion, version, negocio, localizacion, capa, versionXSD);	
     this.backend = backend;
   }
+
+
+/**
+* @param objeto
+* @param entidadDiscreta / interface in IMPL
+* @param operacion
+* @param version
+* @param negocio
+* @param localizacion
+* @param capa
+* @param versionXSD
+*/
+public InputParameters(String objeto, String entidadDiscreta, String operacion, String version, 
+		String negocio, String localizacion, String capa, String versionXSD)
+{
+  this.objeto = objeto;
+  this.entidadDiscreta = entidadDiscreta;
+  this.operacion = operacion;
+  this.version = version;
+  this.negocio = negocio;
+  this.localizacion = localizacion;
+  this.capa = capa;
+  this.versionXSD = versionXSD;
+}
+
   
   public String getEntidadDiscreta()
   {

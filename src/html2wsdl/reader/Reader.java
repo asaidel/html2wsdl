@@ -25,17 +25,24 @@ public abstract class Reader {
 	 */
 	protected Tag handleOrder(List<Tag> tagList, Tag stubBefore, Tag stub, String type) {
 		
-		  if (stub.getOrder().length() > stubBefore.getOrder().length())
+		  /*  stub > stubBefore
+		   * example 2.2.1 > 2.2
+		   */
+		int stubLength = stub.getOrder().length();
+		int stubBeforeLength = stubBefore.getOrder().length();
+		
+		if (stubLength == stubBeforeLength + 2)
 		  {
 			  stubBefore.addChild(stub);
-		  }
-		  else if (stub.getOrder().length() == stubBefore.getOrder().length()) 
+		  }   
+		  else if (stubLength == stubBeforeLength ||  
+				  stubLength == stubBeforeLength + 1) // example 2.2.10 > 2.2.9
 		  {
 			  // root.flattened().filter(tag -> tag.getChildren().contains(stubParent)).findFirst();
 			  Tag grandPa = stubBefore.findFather(tagList);		    		  
 			  grandPa.addChild(stub);
 		  }
-		  else // stub.getOrder().length() < stubBefore.getOrder().length()
+		  else // stub < stubBefore
 		  {		
 			  // TODO maybe sibling search is more precise comparing order and/or reuse grandPa above
 			  Tag grandGrandPa = stubBefore.findFather(tagList).findFather(tagList);		    		 
@@ -47,36 +54,3 @@ public abstract class Reader {
 		return stubBefore;
 	}
 }
-
-/*	private static Tag searchFather(Tag root, Tag child) {		
-//Tag father = null;
-
-Optional<Tag> optional = root.getChildren().parallelStream()
-		.filter(father -> test(root, father, child)).findFirst();
-
-for (Iterator<Tag> iterator = root.getChilds().iterator(); iterator.hasNext();) {
-	father = iterator.next();
-	
-	if (father.getChilds().contains(child))		
-		break;
-	else 
-		searchFather(child, root);
-}
-
-
-Tag result = null;
-
-if (optional.isPresent()) 
-	result = optional.get();
-
-return result;		
-}
-
-private static boolean test(Tag root, Tag father, Tag child) {	
-if (!father.getChildren().contains(child))
-	searchFather(root, child);
-else return true;
-
-return false;	
-}
-*/

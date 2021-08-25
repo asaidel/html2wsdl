@@ -1,0 +1,1626 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File
+href="../ATC02%20-%20OSB%20-%20transaccionRiesgoEvaluar.htm">
+<link rel=File-List href=filelist.xml>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+x\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(1);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../ATC02%20-%20OSB%20-%20transaccionRiesgoEvaluar.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]><![if !supportAnnotations]><style id="dynCom" type="text/css"><!-- --></style>
+
+<script language="JavaScript"><!--
+
+function msoCommentShow(com_id,anchor_id) {
+	if(msoBrowserCheck()) {
+	   c = document.all(com_id);
+	   a = document.all(anchor_id);
+	   if (null != c) {
+		var cw = c.offsetWidth;
+		var ch = c.offsetHeight;
+		var aw = a.offsetWidth;
+		var ah = a.offsetHeight;
+		var x = a.offsetLeft;
+		var y = a.offsetTop;
+		var el = a;
+		while (el.tagName != "BODY") {
+		   el = el.offsetParent;
+		   x = x + el.offsetLeft;
+		   y = y + el.offsetTop;
+		   }		
+		var bw = document.body.clientWidth;
+		var bh = document.body.clientHeight;
+		var bsl = document.body.scrollLeft;
+		var bst = document.body.scrollTop;
+		if (x + cw + ah/2 > bw + bsl && x + aw - ah/2 - cw >= bsl ) {
+		   c.style.left = x + aw - ah / 2 - cw; 
+		}
+		else {
+		   c.style.left = x + ah/2; 
+		}
+		if (y + ch + ah/2 > bh + bst && y + ah/2 - ch >= bst ) {
+	 	   c.style.top = y + ah/2 - ch;
+		} 
+		else {
+		   c.style.top = y + ah/2;
+		}
+		c.style.visibility = "visible";
+	   }
+	}
+}
+
+function msoCommentHide(com_id) {
+	if(msoBrowserCheck()) {
+	  c = document.all(com_id)
+	  if (null != c) {
+	    c.style.visibility = "hidden";
+	    c.style.left = "-10000";
+	    c.style.top = "-10000";
+	  }
+	}
+}
+
+function msoBrowserCheck() {
+ ms=navigator.appVersion.indexOf("MSIE");
+ vers = navigator.appVersion.substring(ms+5, ms+6);
+ ie4 = (ms>0) && (parseInt(vers) >=4);
+ return ie4
+}
+
+if (msoBrowserCheck()) {
+document.styleSheets.dynCom.addRule(".msocomspan1","position:absolute");
+document.styleSheets.dynCom.addRule(".msocomspan2","position:absolute");
+document.styleSheets.dynCom.addRule(".msocomspan2","left:-1.5ex");
+document.styleSheets.dynCom.addRule(".msocomspan2","width:2ex");
+document.styleSheets.dynCom.addRule(".msocomspan2","height:0.5em");
+document.styleSheets.dynCom.addRule(".msocomanch","font-size:0.5em");
+document.styleSheets.dynCom.addRule(".msocomanch","color:red");
+document.styleSheets.dynCom.addRule(".msocomhide","display: none");
+document.styleSheets.dynCom.addRule(".msocomtxt","visibility: hidden");
+document.styleSheets.dynCom.addRule(".msocomtxt","position: absolute");        
+document.styleSheets.dynCom.addRule(".msocomtxt","top:-10000");         
+document.styleSheets.dynCom.addRule(".msocomtxt","left:-10000");         
+document.styleSheets.dynCom.addRule(".msocomtxt","width: 33%");                 
+document.styleSheets.dynCom.addRule(".msocomtxt","background: infobackground");
+document.styleSheets.dynCom.addRule(".msocomtxt","color: infotext");
+document.styleSheets.dynCom.addRule(".msocomtxt","border-top: 1pt solid threedlightshadow");
+document.styleSheets.dynCom.addRule(".msocomtxt","border-right: 2pt solid threedshadow");
+document.styleSheets.dynCom.addRule(".msocomtxt","border-bottom: 2pt solid threedshadow");
+document.styleSheets.dynCom.addRule(".msocomtxt","border-left: 1pt solid threedlightshadow");
+document.styleSheets.dynCom.addRule(".msocomtxt","padding: 3pt 3pt 3pt 3pt");
+document.styleSheets.dynCom.addRule(".msocomtxt","z-index: 100");
+}
+
+// -->
+</script>
+<![endif]>
+</head>
+
+<body link="#5F5F5F" vlink="#919191" class=xl225>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1338 style='border-collapse:
+ collapse;table-layout:fixed;width:1004pt'>
+ <col class=xl225 width=16 style='mso-width-source:userset;mso-width-alt:585;
+ width:12pt'>
+ <col class=xl226 width=69 style='mso-width-source:userset;mso-width-alt:2523;
+ width:52pt'>
+ <col class=xl226 width=157 style='mso-width-source:userset;mso-width-alt:5741;
+ width:118pt'>
+ <col class=xl225 width=215 style='mso-width-source:userset;mso-width-alt:7862;
+ width:161pt'>
+ <col class=xl227 width=235 style='mso-width-source:userset;mso-width-alt:8594;
+ width:176pt'>
+ <col class=xl228 width=88 style='mso-width-source:userset;mso-width-alt:3218;
+ width:66pt'>
+ <col class=xl225 width=185 style='mso-width-source:userset;mso-width-alt:6765;
+ width:139pt'>
+ <col class=xl226 width=373 style='mso-width-source:userset;mso-width-alt:13641;
+ width:280pt'>
+ <col class=xl225 width=73 style='mso-width-source:userset;mso-width-alt:2669;
+ width:55pt'>
+ <col class=xl225 width=64 span=245 style='mso-width-source:userset;mso-width-alt:
+ 2340;width:48pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 width=16 style='height:15.0pt;width:12pt' align=left
+  valign=top><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+   o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+   stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="_x0033__x0020_Imagen" o:spid="_x0000_s2059"
+   type="#_x0000_t75" style='position:absolute;margin-left:11.25pt;
+   margin-top:12.75pt;width:42.75pt;height:54.75pt;z-index:10;visibility:visible'
+   o:gfxdata="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
+vhUv6g0AAOoNAAAVAAAAZHJzL21lZGlhL2ltYWdlMS5qcGVn/9j/4AAQSkZJRgABAQEA3ADcAAD/
+2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoK
+BggLDAsKDAkKCgr/wAALCACoAIIBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL
+/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2Jy
+ggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWG
+h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo
+6erx8vP09fb3+Pn6/9oACAEBAAA/AP38oooooooooopHfYu41x2o/tC/ArSNQuNJ1b40eE7W6tZm
+iubefxFbJJFIpIZGUvlWBBBB5BGDW14P+IHgj4gWcuoeBvGOla1bwy+XNcaTqEdwkb4B2sY2IDYI
+ODzg1sUUUUUUUUUUUUVT8QXs2naJdX9vt8yG3d13ZxkKTz7V86+Df2g/inq3jHS9I1TxFHLa3WpQ
+wXEcllEuY2kCtyFBHBPfiviv4yMG+L3irau3/ipL4AY/6eHr6y/4JQc+FPGR/wCojaf+i3r64ooo
+pGcIMtVTUtd0rSlT7dqEcLSNthjZvmlYDO1V6scdhk1RTxtp8q749P1XH+1od0v84qd/wmNl/wBA
+/Uv/AAT3P/xuj/hMbL/oH6l/4J7n/wCN0f8ACY2X/QP1L/wT3P8A8bo/4TGy/wCgfqX/AIJ7n/43
+R/wmNl/0D9S/8E9z/wDG6dH4us5XWJbDUgzMFXdpNwBknHJMYAHueB34r5L/AOCin/BW7wf+wt8R
+NN+D8/wbvvF2raloqaldRtqkdlaw2skssSjzDHK0jloXymwKF2ncSSB8nad/wXW+Dmk6lDq2n/sI
+eXcQTLLDIfiPK211OQcG0I4IzXN6h/wVp/Y+8Y+MJvEHjv8A4J83ynUr9p9VvdN+J128w3tmSSOH
+ZFGz8khC8ak8blHI/Vn9nTwN8DvAfw4s/EPwT0WOw0TxNb2+qW80l1PI1zHLErRvuuGLgbCCFOMZ
+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
+BgAAAAAGAAYAhQEAAC4VAAAAAA==
+">
+   <v:imagedata src="image003.png" o:title=""/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:10;margin-left:15px;margin-top:17px;width:57px;
+  height:73px'><img width=57 height=73 src=image015.png v:shapes="_x0033__x0020_Imagen"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=20 class=xl225 width=16 style='height:15.0pt;width:12pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl220 width=69 style='width:52pt'>&nbsp;</td>
+  <td class=xl220 width=157 style='width:118pt'>&nbsp;</td>
+  <td class=xl221 width=215 style='width:161pt'>&nbsp;</td>
+  <td class=xl222 width=235 style='width:176pt'>&nbsp;</td>
+  <td class=xl223 width=88 style='width:66pt'>&nbsp;</td>
+  <td class=xl221 width=185 style='width:139pt'>&nbsp;</td>
+  <td class=xl224 width=373 style='width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td height=29 class=xl225 style='height:21.75pt'></td>
+  <td class=xl224>&nbsp;</td>
+  <td colspan=3 class=xl243 width=607 style='width:455pt'>Definición de Mensaje
+  Funcional</td>
+  <td class=xl243 width=88 style='width:66pt'>&nbsp;</td>
+  <td class=xl238 width=185 style='width:139pt'>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr height=14 style='mso-height-source:userset;height:10.5pt'>
+  <td height=14 class=xl225 style='height:10.5pt'></td>
+  <td class=xl224>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+  <td class=xl221>&nbsp;</td>
+  <td class=xl222 width=235 style='width:176pt'>&nbsp;</td>
+  <td class=xl223>&nbsp;</td>
+  <td class=xl221>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl224>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+  <td class=xl221>&nbsp;</td>
+  <td class=xl222 width=235 style='width:176pt'>&nbsp;</td>
+  <td class=xl223>&nbsp;</td>
+  <td class=xl221>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl244 width=157 style='width:118pt'>Sistema exposición mensaje<![if !supportAnnotations]><span
+  class=msocomspan1><span class=msocomspan2 id="_anchor_1"
+  onmouseover="msoCommentShow('_com_1','_anchor_1')"
+  onmouseout="msoCommentHide('_com_1')" language=JavaScript><a
+  class=msocomanch href="#_msocom_1" name="_msoanchor_1">[1]</a></span></span><![endif]></td>
+  <td class=xl246 width=215 style='border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl223>&nbsp;</td>
+  <td class=xl225></td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl226></td>
+  <td class=xl225></td>
+  <td class=xl224>&nbsp;</td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td colspan=7 class=xl242>Mensaje Requerimiento</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl226></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td></td>
+  <td class=xl221>&nbsp;</td>
+  <td class=xl224>&nbsp;</td>
+ </tr>
+ <tr class=xl228 height=20 style='height:15.0pt'>
+  <td height=20 class=xl228 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='width:52pt'>Id Campo<![if !supportAnnotations]><span
+  class=msocomspan1><span class=msocomspan2 id="_anchor_2"
+  onmouseover="msoCommentShow('_com_2','_anchor_2')"
+  onmouseout="msoCommentHide('_com_2')" language=JavaScript><a
+  class=msocomanch href="#_msocom_2" name="_msoanchor_2">[2]</a></span></span><![endif]></td>
+  <td class=xl247 width=157 style='border-left:none;width:118pt'>Objeto de
+  Negocio<![if !supportAnnotations]><span class=msocomspan1><span
+  class=msocomspan2 id="_anchor_3"
+  onmouseover="msoCommentShow('_com_3','_anchor_3')"
+  onmouseout="msoCommentHide('_com_3')" language=JavaScript><a
+  class=msocomanch href="#_msocom_3" name="_msoanchor_3">[3]</a></span></span><![endif]></td>
+  <td class=xl247 width=215 style='border-left:none;width:161pt'>Nombre Campo
+  Funcional<![if !supportAnnotations]><span class=msocomspan1><span
+  class=msocomspan2 id="_anchor_4"
+  onmouseover="msoCommentShow('_com_4','_anchor_4')"
+  onmouseout="msoCommentHide('_com_4')" language=JavaScript><a
+  class=msocomanch href="#_msocom_4" name="_msoanchor_4">[4]</a></span></span><![endif]></td>
+  <td class=xl247 width=235 style='border-left:none;width:176pt'>Descripción de
+  Negocio de Campo<![if !supportAnnotations]><span class=msocomspan1><span
+  class=msocomspan2 id="_anchor_5"
+  onmouseover="msoCommentShow('_com_5','_anchor_5')"
+  onmouseout="msoCommentHide('_com_5')" language=JavaScript><a
+  class=msocomanch href="#_msocom_5" name="_msoanchor_5">[5]</a></span></span><![endif]></td>
+  <td class=xl247 width=88 style='border-left:none;width:66pt'>Tipo de dato<![if !supportAnnotations]><span
+  class=msocomspan1><span class=msocomspan2 id="_anchor_6"
+  onmouseover="msoCommentShow('_com_6','_anchor_6')"
+  onmouseout="msoCommentHide('_com_6')" language=JavaScript><a
+  class=msocomanch href="#_msocom_6" name="_msoanchor_6">[6]</a></span></span><![endif]></td>
+  <td class=xl247 width=185 style='border-left:none;width:139pt'>Dominio de
+  Valores<![if !supportAnnotations]><span class=msocomspan1><span
+  class=msocomspan2 id="_anchor_7"
+  onmouseover="msoCommentShow('_com_7','_anchor_7')"
+  onmouseout="msoCommentHide('_com_7')" language=JavaScript><a
+  class=msocomanch href="#_msocom_7" name="_msoanchor_7">[7]</a></span></span><![endif]></td>
+  <td class=xl247 width=373 style='border-left:none;width:280pt'>Observaciones<![if !supportAnnotations]><span
+  class=msocomspan1><span class=msocomspan2 id="_anchor_8"
+  onmouseover="msoCommentShow('_com_8','_anchor_8')"
+  onmouseout="msoCommentHide('_com_8')" language=JavaScript><a
+  class=msocomanch href="#_msocom_8" name="_msoanchor_8">[8]</a></span></span><![endif]></td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I001</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>ClientService</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=34 style='height:25.5pt'>
+  <td height=34 class=xl225 style='height:25.5pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I002</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>Country</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Pais
+  el cual realiza la solicitud</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>AR,
+  CL, CO, PE, BR, UY</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Acrónimos
+  de AR:Argentina, CL:Chile, CO:Colombia, PE:Perú, BR: Brasil, Uy: Uruguay.</td>
+ </tr>
+ <tr class=xl253 height=119 style='height:89.25pt'>
+  <td height=119 class=xl253 style='height:89.25pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I003</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>Commerce</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>comercio</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>{Banco,
+  CMR, Falabella, Seguros, Sodimac, Tottus, Movil, Viajes, <br>
+    Falabella Movil, CrateAndBarrel, Telco CMR, Connect, Web Movil
+  Falabella<br>
+    BackOffice}</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=235 style='mso-height-source:userset;height:176.25pt'>
+  <td height=235 class=xl225 style='height:176.25pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I004</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>Channel</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Canal
+  por el cual se hace la consulta</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>{ASL+,
+  B2B, B2C, Cardif, Comercio Adherido, CRM, <br>
+    Fono Compras, Homy, IVR, Kiosco, Mobile, Mobile-APP, <br>
+    Mobile-WEB, Portal, Presencial, POS, Punto de Venta, <br>
+    SIX, UXPOS, Venta-Empresa, Web, Web CMR, Web-PAC, <br>
+    USSD, Punto de Venta, CRM, DIM, PMM, WMOS, SRX, ATG, <br>
+    OMS, TRL, SAB, WEB_PORTAL, BATCH, App-GSVendedor}</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I005</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>storeId</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>id
+  de la tienda</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I006</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>terminalId</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>TerminalId</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Corresponde
+  a la IP del cliente</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I007</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>date</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Fecha
+  ejecución del servicio</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Date</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Formato:
+  yyyy-mm-dd (2015-05-27)</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I008</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>hour</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Hora
+  de ejecución del servicio</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Time</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Formato:
+  hh:mm:ss (11:15:36)</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I009</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>transaccionRiesgoEvaluarMsgReq</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>complementoCabecera</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I010</td>
+  <td class=xl254 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>tipoMensaje</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Tipo
+  de mensaje</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Número</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Fijo
+  = 9810</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I011</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>tipoTransaccion</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>tipo
+  de transacción</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Número</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=34 style='height:25.5pt'>
+  <td height=34 class=xl225 style='height:25.5pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I012</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>idSesion</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Id
+  de Sesión</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Id
+  de sesión el cual podrá ser asociado con una notificación para realizar el
+  join y conocer los datos del dispositivo de login.</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I013</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>idTransaccion</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>identificador+
+  de transacción</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=85 style='height:63.75pt'>
+  <td height=85 class=xl225 style='height:63.75pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I014</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>idNegocio</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Identificador
+  del negocio</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>CMRCL:
+  1<br>
+    CMRAR: 2<br>
+    BFCO: 3<br>
+    BFCL: 4<br>
+    BFPE: 5</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Fijo
+  CMR Chile = 1</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I015</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>nombreSucursal</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Nombre
+  de Sucursal</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>Nombre
+  completo o abreviado de la sucursal.</td>
+ </tr>
+ <tr class=xl225 height=34 style='height:25.5pt'>
+  <td height=34 class=xl225 style='height:25.5pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>fechaNotificacion</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>FechaHora
+  del envío de la Evaluación de Riesgo Fraude</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>dateTime</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I016</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>datosCliente</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Información
+  del usuario&nbsp;</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=85 style='height:63.75pt'>
+  <td height=85 class=xl225 style='height:63.75pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I017</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>tipo</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Tipo
+  de usuario</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Número</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>Usuario
+  comprador: 1<br>
+    Usuario pagador: 2<br>
+    Usuario que retira: 3<br>
+    Usuario viajero: 4<br>
+    Usuario asegurado: 5</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=85 style='height:63.75pt'>
+  <td height=85 class=xl225 style='height:63.75pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I018</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>paísDocumento</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  País de Documento</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl254 width=185 style='border-top:none;border-left:none;width:139pt'>Chile:
+  CL<br>
+    Argentina: AR<br>
+    Colombia: CO<br>
+    Perú: PE<br>
+    México: MX</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=357 style='height:267.75pt'>
+  <td height=357 class=xl225 style='height:267.75pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I019</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>tipoDocumento</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  tipo de documento</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl269 width=185 style='border-top:none;border-left:none;width:139pt'><font
+  class="font23">En Chile:<br>
+    </font><font class="font24">1 RUT</font><font class="font23"><br>
+    En Colombia:</font><font class="font24"><br>
+    1 Cédula de ciudadanía<br>
+    2 NIT (Sin dígito de chequeo)<br>
+    3 Cédula de extranjeria<br>
+    4 Tarjeta de identidad<br>
+    5 Pasaporte<br>
+    6 Carnet Diplomático<br>
+    7 Registro Civil (NUIP)<br>
+    </font><font class="font23">En Argentina:</font><font class="font24"><br>
+    1 Libreta Cívica<br>
+    2 DNI<br>
+    3 Libreta Enrolamiento<br>
+    4 Prestamos Sodimac Mutual<br>
+    5 Cédula de extranjería<br>
+    6 Prestamos<br>
+    </font><font class="font25">Perú:<br>
+    </font><font class="font24">Por definir<br>
+    </font><font class="font23">México:<br>
+    </font><font class="font24">Por definir</font></td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I020</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>numeroDocumento</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  Nro. De Documento</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I021</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>nombre</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  nombre</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I022</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>apellidoPaterno</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  apellido paterno</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I023</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>apellidoMaterno</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  apellido materno</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I024</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>telefono</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  Teléfono</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I025</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>telefono2</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  teléfono 2</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I026</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>email</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Cliente
+  Email</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I027</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>estado</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>Status<font
+  class="font26">&nbsp;</font></td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I028</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>antiguedad</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>antigüedadDelCliente<font
+  class="font26">&nbsp;</font></td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Número</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I029</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>fechaUltimoCambioTelefono</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>fecha
+  de último cambio de celular<font class="font26">&nbsp;</font></td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Date</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I030</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>fechaUltimoCambioEmail</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>fecha
+  de último cambio de correo<font class="font26">&nbsp;</font></td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Date</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=34 style='height:25.5pt'>
+  <td height=34 class=xl225 style='height:25.5pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I031</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>fechaNotificacion</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>FechaHora
+  del envío de la Evaluación de Riesgo Fraude</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>Número</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>YYYYMMDDHH24MISS</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>I032</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl254 width=215 style='border-top:none;border-left:none;width:161pt'>transaccionFinanciera</td>
+  <td class=xl254 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl254 width=88 style='border-top:none;border-left:none;width:66pt'>String</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl254 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl257 width=69 style='width:52pt'>&nbsp;</td>
+  <td class=xl256 width=157 style='width:118pt'>&nbsp;</td>
+  <td class=xl261 width=215 style='width:161pt'></td>
+  <td class=xl261 width=235 style='width:176pt'></td>
+  <td class=xl260 width=88 style='width:66pt'>&nbsp;</td>
+  <td class=xl256 width=185 style='width:139pt'>&nbsp;</td>
+  <td class=xl260 width=373 style='width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl229></td>
+  <td class=xl229></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl229></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td colspan=7 class=xl242>Mensaje Respuesta</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl226></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <tr class=xl228 height=20 style='height:15.0pt'>
+  <td height=20 class=xl228 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='width:52pt'>Id Campo<![if !supportAnnotations]><span
+  class=msocomspan1><span class=msocomspan2 id="_anchor_9"
+  onmouseover="msoCommentShow('_com_9','_anchor_9')"
+  onmouseout="msoCommentHide('_com_9')" language=JavaScript><a
+  class=msocomanch href="#_msocom_9" name="_msoanchor_9">[9]</a></span></span><![endif]></td>
+  <td class=xl247 width=157 style='border-left:none;width:118pt'>Objeto de
+  Negocio</td>
+  <td class=xl247 width=215 style='border-left:none;width:161pt'>Nombre Campo
+  Funcional</td>
+  <td class=xl247 width=235 style='border-left:none;width:176pt'>Descripción de
+  Negocio de Campo</td>
+  <td class=xl247 width=88 style='border-left:none;width:66pt'>Tipo de dato</td>
+  <td class=xl247 width=185 style='border-left:none;width:139pt'>Dominio de
+  Valores</td>
+  <td class=xl247 width=373 style='border-left:none;width:280pt'>Observaciones</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl226></td>
+  <td class=xl245 width=215 style='border-top:none;width:161pt'>codigoRespuesta</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl225 height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl225 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl247 width=69 style='border-top:none;width:52pt'>&nbsp;</td>
+  <td class=xl245 width=157 style='border-top:none;border-left:none;width:118pt'>&nbsp;</td>
+  <td class=xl245 width=215 style='border-top:none;border-left:none;width:161pt'>&nbsp;</td>
+  <td class=xl245 width=235 style='border-top:none;border-left:none;width:176pt'>&nbsp;</td>
+  <td class=xl245 width=88 style='border-top:none;border-left:none;width:66pt'>&nbsp;</td>
+  <td class=xl245 width=185 style='border-top:none;border-left:none;width:139pt'>&nbsp;</td>
+  <td class=xl245 width=373 style='border-top:none;border-left:none;width:280pt'>&nbsp;</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='mso-height-source:userset;height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=8 style='height:15.0pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=3 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=3 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=3 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl226></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl226></td>
+  <td class=xl226></td>
+  <td class=xl225></td>
+  <td class=xl227 width=235 style='width:176pt'></td>
+  <td class=xl228></td>
+  <td class=xl225></td>
+  <td class=xl226></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=16 style='width:12pt'></td>
+  <td width=69 style='width:52pt'></td>
+  <td width=157 style='width:118pt'></td>
+  <td width=215 style='width:161pt'></td>
+  <td width=235 style='width:176pt'></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=185 style='width:139pt'></td>
+  <td width=373 style='width:280pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<div style='mso-element:comment-list'><![if !supportAnnotations]>
+
+<hr class=msocomhide align=left size=1 width="33%">
+
+<![endif]>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_1" class=msocomtxt
+onmouseover="msoCommentShow('_com_1','_anchor_1')"
+onmouseout="msoCommentHide('_com_1')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_1"
+name="_msocom_1">[1]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s2057" type="#_x0000_t202" style='position:absolute;
+  margin-left:205.5pt;margin-top:-2263.5pt;width:91.5pt;height:64.5pt;
+  z-index:9;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>4</x:Row>
+   <x:Column>2</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2057" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Sistema de exposición<br>
+-----------------------------<br>
+Middleware - OSB</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_2" class=msocomtxt
+onmouseover="msoCommentShow('_com_2','_anchor_2')"
+onmouseout="msoCommentHide('_com_2')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_2"
+name="_msocom_2">[2]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2049" type="#_x0000_t202" style='position:absolute;
+  margin-left:7.5pt;margin-top:-2142pt;width:146.25pt;height:120pt;z-index:1;
+  visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6" strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>1</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2049" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font19">EJEMPLO DE LLENADO :<br>
+Id Campo<br>
+-------------<br>
+I001<br>
+I002<br>
+I003<br>
+<br>
+Nota: Carácter Inicial es la letra &quot;I&quot;</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_3" class=msocomtxt
+onmouseover="msoCommentShow('_com_3','_anchor_3')"
+onmouseout="msoCommentHide('_com_3')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_3"
+name="_msocom_3">[3]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2050" type="#_x0000_t202" style='position:absolute;
+  margin-left:78pt;margin-top:-2124pt;width:81.75pt;height:102pt;z-index:2;
+  visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6" strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>2</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2050" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Objeto de Negocio<br>
+-------------------------<br>
+Producto<br>
+Cuenta</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_4" class=msocomtxt
+onmouseover="msoCommentShow('_com_4','_anchor_4')"
+onmouseout="msoCommentHide('_com_4')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_4"
+name="_msocom_4">[4]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2051" type="#_x0000_t202" style='position:absolute;
+  margin-left:195.75pt;margin-top:-2115.75pt;width:117pt;height:94.5pt;
+  z-index:3;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>3</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2051" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Nombre Campo
+Funcional<br>
+-----------------------------------<br>
+Precio<br>
+País de Origen<br>
+Estado de Cuenta</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_5" class=msocomtxt
+onmouseover="msoCommentShow('_com_5','_anchor_5')"
+onmouseout="msoCommentHide('_com_5')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_5"
+name="_msocom_5">[5]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2052" type="#_x0000_t202" style='position:absolute;
+  margin-left:387pt;margin-top:-2131.5pt;width:215.25pt;height:108.75pt;
+  z-index:4;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>4</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2052" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Descripción de Negocio de
+Campo<br>
+----------------------------------------------<br>
+Es el identificador que le dio la mamá cuando lo bautiozaron<br>
+País de fabricación del producto</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_6" class=msocomtxt
+onmouseover="msoCommentShow('_com_6','_anchor_6')"
+onmouseout="msoCommentHide('_com_6')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_6"
+name="_msocom_6">[6]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2053" type="#_x0000_t202" style='position:absolute;
+  margin-left:564pt;margin-top:-2153.25pt;width:115.5pt;height:132.75pt;
+  z-index:5;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>5</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2053" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Tipo de
+dato<br>
+-----------------<br>
+númerico<br>
+alfanumérico<br>
+alfanumérico</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_7" class=msocomtxt
+onmouseover="msoCommentShow('_com_7','_anchor_7')"
+onmouseout="msoCommentHide('_com_7')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_7"
+name="_msocom_7">[7]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2054" type="#_x0000_t202" style='position:absolute;
+  margin-left:683.25pt;margin-top:-2122.5pt;width:132.75pt;height:99.75pt;
+  z-index:6;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>6</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2054" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Dominio de Valores<br>
+---------------------------<br>
+China, India, Filipinas y Australia<br>
+Abierta, Cerrada, Congelada<br>
+<br>
+</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_8" class=msocomtxt
+onmouseover="msoCommentShow('_com_8','_anchor_8')"
+onmouseout="msoCommentHide('_com_8')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_8"
+name="_msocom_8">[8]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2055" type="#_x0000_t202" style='position:absolute;
+  margin-left:843pt;margin-top:-2157pt;width:151.5pt;height:134.25pt;z-index:7;
+  visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6" strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>8</x:Row>
+   <x:Column>7</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2055" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO
+:<br>
+Observaciones<br>
+--------------------<br>
+Ojo que son precios, deben soportar descuentos<br>
+No se consideran nuevas fabricas</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+<div style='mso-element:comment'><![if !supportAnnotations]>
+
+<div id="_com_9" class=msocomtxt
+onmouseover="msoCommentShow('_com_9','_anchor_9')"
+onmouseout="msoCommentHide('_com_9')" language=JavaScript><![endif]>
+
+<div><![if !supportAnnotations]><a class=msocomhide href="#_msoanchor_9"
+name="_msocom_9">[9]</a><![endif]><!--[if gte mso 9]><xml>
+ <v:shape id="_x0000_s2056" type="#_x0000_t202" style='position:absolute;
+  margin-left:16.5pt;margin-top:-1163.25pt;width:129pt;height:147.75pt;
+  z-index:8;visibility:hidden;mso-wrap-style:tight' fillcolor="#fbf6d6"
+  strokecolor="#edeaa1">
+  <v:fill color2="#fbfe82" angle="-180" type="gradient">
+   <o:fill v:ext="view" type="gradientUnscaled"/>
+  </v:fill>
+  <v:shadow on="t" obscured="t"/>
+  <v:path o:connecttype="none"/>
+  <x:ClientData ObjectType="Note">
+   <x:MoveWithCells/>
+   <x:SizeWithCells/>
+   <x:AutoFill>False</x:AutoFill>
+   <x:Row>47</x:Row>
+   <x:Column>1</x:Column>
+   <x:Author>Eugenio Carlos Diaz Gonzalez</x:Author>
+  </x:ClientData>
+ </v:shape></xml><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><![endif]>
+
+<div v:shape="_x0000_s2056" style='padding:4.35pt 7.95pt 4.35pt 7.95pt;
+text-align:left' class=shape><font class="font20">EJEMPLO DE LLENADO :<br>
+Id Campo<br>
+-------------<br>
+O001<br>
+O002<br>
+O003<br>
+<br>
+Nota: Carácter Inicial es la letra &quot;O&quot;<br>
+</font></div>
+
+<![if !vml]></span><![endif]></div>
+
+<![if !supportAnnotations]></div>
+
+<![endif]></div>
+
+</div>
+
+</body>
+
+</html>
