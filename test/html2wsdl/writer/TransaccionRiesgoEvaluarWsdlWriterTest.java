@@ -23,7 +23,7 @@ public class TransaccionRiesgoEvaluarWsdlWriterTest extends FreemarkerWriterTest
 		super.setUp();		
     }
 
-	//@Test
+	@Test
 	public void expTest() throws Exception
 	{
 		InputParameters parametersIn = new InputParameters("Transaccion", "Riesgo", "Evaluar", "v1.0", "FIF",

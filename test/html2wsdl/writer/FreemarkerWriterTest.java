@@ -23,7 +23,7 @@ public class FreemarkerWriterTest {
 	@Before
 	protected void setUp() throws IOException
 	{
-		Configuration cfg = new Configuration(Configuration.VERSION_2_3_25);
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
 		cfg.setDirectoryForTemplateLoading(new File("resources"));				
 		cfg.setDefaultEncoding("UTF-8");
 		cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
