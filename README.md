@@ -26,6 +26,8 @@ Pass InputParameters and OffsetParameters:
 	 
  The output object for freemarker is OutputParameters. Your WSDL will be in output/ and output/Schemas
 
+<img width="964" alt="spec example" src="resources/spec/specExample.png">
+
 ## RUN 
 * Build your own Junit test, see TransaccionRiesgoEvaluarWsdlWriterTest class. 
 
